@@ -5,9 +5,16 @@ import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 function BookingPage({ date, handleDateChange, availableBookingTimes }) {
     const [time, setTime] = useState('');
-    const [guests, setGuests] = useState(1);
+    const [guests, setGuests] = useState();
     const [occasion, setOccasion] = useState('Birthday');
     const [showModal, setShowModal] = useState(false);
+    const [errorMsgs, setErrorMsgs] = useState({
+        date: '',
+        time: '',
+        guests: "Select more than 1",
+        occasion: ''
+      });
+    const [guestsIsInValid, setGuestsIsInValid] = useState(false)
     const handleChange = (event) => {
         const { name, value } = event.target;
         switch (name) {
@@ -37,6 +44,14 @@ function BookingPage({ date, handleDateChange, availableBookingTimes }) {
         }
     }
 
+    const validateField = (e) => {
+        debugger;
+        let value = parseInt(e.target.value);
+        let isInvalid = value < 10;
+        setGuestsIsInValid(isInvalid);
+        setErrorMsgs(prev => ({ ...prev, guests: isInvalid ? "Select 2 or more guests" : "" }));
+      };
+
     return (
         <div>
             <BookingForm
@@ -47,6 +62,9 @@ function BookingPage({ date, handleDateChange, availableBookingTimes }) {
                 handleSubmit={handleSubmit}
                 handleInputChange={handleChange}
                 availableBookingTimes={availableBookingTimes}
+                errorMsgs={errorMsgs}
+                guestsIsInValid={guestsIsInValid}
+                validateField={validateField}
             />
             <div
       className="modal show"
