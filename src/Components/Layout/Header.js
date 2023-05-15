@@ -1,11 +1,12 @@
 import React from 'react'
+import Nav from './Nav';
 
 function Header() {
-    return (
-      <header>
-        {/* content goes here */}
-      </header>
-    );
-  }
+  return (
+    <header>
+      <Nav/>
+    </header>
+  );
+}
 
 export default Header
