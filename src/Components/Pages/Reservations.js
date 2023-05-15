@@ -30,15 +30,18 @@ function Reservations() {
   const initializeTimes=()=>{
     const res = fetchAPI(new Date());
     dispatch({ type: "UPDATE_TIMES", res });
+    return res
   }
+  
   
   const updateTimes=(date)=>{
     const res = fetchAPI(date);
     dispatch({ type: "UPDATE_TIMES", res });
+    return res;
   }
 
   return (
-    <section>
+    <section><h1>Booking</h1>
       <Container>
         <BookingPage date={date} handleDateChange={handleDateChange} availableBookingTimes={state.times} />
       </Container>

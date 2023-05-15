@@ -13,7 +13,7 @@ function BookingPage({ date, handleDateChange, availableBookingTimes }) {
         time: '',
         guests: "Select more than 1",
         occasion: ''
-      });
+    });
     const [guestsIsInValid, setGuestsIsInValid] = useState(false)
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -50,7 +50,7 @@ function BookingPage({ date, handleDateChange, availableBookingTimes }) {
         let isInvalid = value < 10;
         setGuestsIsInValid(isInvalid);
         setErrorMsgs(prev => ({ ...prev, guests: isInvalid ? "Select 2 or more guests" : "" }));
-      };
+    };
 
     return (
         <div>
@@ -67,26 +67,26 @@ function BookingPage({ date, handleDateChange, availableBookingTimes }) {
                 validateField={validateField}
             />
             <div
-      className="modal show"
-      style={{ display: 'block', position: 'initial' }}
-    >
-         {showModal && 
-         <Modal.Dialog>
-         <Modal.Header closeButton>
-         <Modal.Title>Modal title</Modal.Title>
-         </Modal.Header>
+                className="modal show"
+                style={{ display: 'block', position: 'initial' }}
+            >
+                {showModal &&
+                    <Modal.Dialog>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Modal title</Modal.Title>
+                        </Modal.Header>
 
-         <Modal.Body>
-         <p>Modal body text goes here.</p>
-         </Modal.Body>
+                        <Modal.Body>
+                            <p>Modal body text goes here.</p>
+                        </Modal.Body>
 
-         <Modal.Footer>
-         <Button variant="secondary" onClick={()=>setShowModal(false)}>Close</Button>
-         </Modal.Footer>
-     </Modal.Dialog>
-         } 
-    
-    </div>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={() => setShowModal(false)}>Close</Button>
+                        </Modal.Footer>
+                    </Modal.Dialog>
+                }
+
+            </div>
         </div>
     );
 }
