@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import BookingConfirmation from './BookingConfirmation';
 function BookingPage({ date, handleDateChange, availableBookingTimes }) {
-    const [time, setTime] = useState('');
+    const [time, setTime] = useState(null);
     const [guests, setGuests] = useState();
     const [occasion, setOccasion] = useState('Birthday');
     const [showModal, setShowModal] = useState(false);

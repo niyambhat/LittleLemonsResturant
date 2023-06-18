@@ -5,6 +5,7 @@ import Image from 'react-bootstrap/Image';
 import MenuItem from '../Menu/MenuItem';
 import owner from "../../Assets/owner.png"
 import CustomersSay from '../Layout/CustomersSay';
+import { Link } from 'react-router-dom';
 
 function Home() {
     return (
@@ -15,8 +16,12 @@ function Home() {
             <div className="heroText">
             <h1>Little Lemons</h1>
             <p>We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-            <button type="button" class="btn btn-primary btn-lg" aria-label="Reserve a table">Reserve a table</button>
-          </div>
+            <Link to="/reservations" aria-label="Reserve a table">
+      <button type="button" className="btn btn-primary btn-lg">
+        Reserve a table
+      </button>
+    </Link>
+              </div>
           <div className="heroImage">
             <img src={yum} alt="restaurant" width="400" />
           </div>

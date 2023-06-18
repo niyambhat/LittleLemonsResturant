@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import BookingConfirmation from './BookingConfirmation';
 
@@ -6,6 +6,9 @@ function BookingForm(props) {
   const { handleDateChange, availableBookingTimes, handleSubmit, errorMsgs, validateField, setShowModal, showModal } = props;
   const res = ['10:00', '11:00', '12:00'];  
   const today = new Date().toISOString().split('T')[0];
+  
+  const hasErrors = Object.values(errorMsgs).some(msg => msg !== '') || !props.date || !props.time || !props.guests || !props.occasion ? true : false;
+
 
   return (
     <>
@@ -21,6 +24,7 @@ function BookingForm(props) {
           <Form.Group controlId="time" className='pb-4'>
             <Form.Label>Choose time</Form.Label>
             <Form.Control as="select" name="time" value={props.time} onChange={props.handleInputChange}>
+            <option value="">Please select an option</option>
             {Array.isArray(props.availableBookingTimes) ? props.availableBookingTimes.map((item, index) => {
               return <option key={index}>{item}</option>
             }) : null}
@@ -39,7 +43,7 @@ function BookingForm(props) {
             </Form.Control>
           </Form.Group>
             <div className='text-end'>
-            <Button variant="primary" type="submit" className="fullBtn" onClick={()=>setShowModal(true)}>
+            <Button variant="primary" type="submit" className="fullBtn" onClick={()=>setShowModal(true)} disabled={hasErrors}>
             Make Your reservation
           </Button>
             </div> 
