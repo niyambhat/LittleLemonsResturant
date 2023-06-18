@@ -2,68 +2,60 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import yum from "../../Assets/yum.png"
 import Image from 'react-bootstrap/Image';
-
+import MenuItem from '../Menu/MenuItem';
+import owner from "../../Assets/owner.png"
+import CustomersSay from '../Layout/CustomersSay';
 
 function Home() {
     return (
-        <>
-            <section className="bannerSection">
-                <Container>
-                <Row className='banner'>
-                <Col md={6} xs={12}>
-                    <div className='flex-alignCenter'>
-                    <h1>Little Lemons</h1>
-                    <p>We are family owned Mediterrnean resturant, focused on tradional recipies served with a modern twist..</p>
-                    <Button className='primary' variant="primary">Reserve a table</Button>
-                    </div>      
-                </Col>
-                <Col md={6} xs={12} className='banner_imgWrapper'>
-                    <div className="hero_img text-end">
-                    <Image src={yum} alt="restaurant" />
-                    </div>
-                </Col>
-            </Row>
-                </Container>  
+        <div className="layout">
+        
+        <section className="bannerSection">
+            <div className='sm-conatiner'>
+            <div className="heroText">
+            <h1>Little Lemons</h1>
+            <p>We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
+            <button type="button" class="btn btn-primary btn-lg" aria-label="Reserve a table">Reserve a table</button>
+          </div>
+          <div className="heroImage">
+            <img src={yum} alt="restaurant" width="400" />
+          </div>
+            </div> 
+        </section>
+
+        <section className="specialsSection">
+            <div className="specialsHeader">
+                <h1>This Week's Specials</h1>
+                <div className="specialsMenu">
+            <button type="button" class="btn btn-secondary btn-lg"  aria-label="Online Menu">Online Menu</button>
+            </div>
+            </div>
+         
+            <div className="specials">
+            <MenuItem title="Food Item" price="AUD 22" description="Yumy food from the birthplace of mother land"/>      
+            <MenuItem title="Food Item" price="AUD 22" description="Yumy food from the birthplace of mother land"/>
+            <MenuItem title="Food Item" price="AUD 22" description="Yumy food from the birthplace of mother land"/>
+            </div>
             </section>
-            
-            <section>
-                <Container>
-                <Row className="align-items-center">
-                <Col md={6} xs={12}>
-                    <h1>This Weeks Specials</h1>
-                </Col>
-                <Col md={6} xs={12} className="text-end">
-                    <Button variant="primary">Online Menu</Button>
-                </Col>
-            </Row>
-            <Row>
-                <Col sm={4} xs={12}>
-                <img src={yum} alt="restaurant" />
-                    <h3>Steak</h3>
-                    <p>$24.99</p>
-                    <p>Description of the dish goes here...</p>
-                    <Button variant="primary">Order a delivery</Button>
-                </Col>
-                <Col sm={4} xs={12}>
-                <img src={yum} alt="restaurant" />
-                    <h3>Pizza</h3>
-                    <p>$19.99</p>
-                    <p>Description of the dish goes here...</p>
-                    <Button variant="primary">Order a delivery</Button>
-                </Col>
-                <Col sm={4} xs={12}>
-                <img src={yum} alt="restaurant" />
-                    <h3>Salad</h3>
-                    <p>$9.99</p>
-                    <p>Description of the dish goes here...</p>
-                    <Button variant="primary">Order a delivery</Button>
-                </Col>
-            </Row>
-                </Container>
-            </section>
-            
-            </>
+
+            <section className="aboutSection">
+            <div className='sm-conatiner'>
+            <div className="sideImage">
+            <img src={owner} alt="restaurant" width="400" />
+          </div>
+            <div className="aboutText">
+            <h1>About</h1>
+            <p>Little Lemon Restaurant is a charming culinary haven that captivates diners with its delightful ambiance and exquisite flavors. Nestled in the heart of a bustling city, this hidden gem offers a unique fusion of traditional and modern cuisine, crafted with utmost precision and creativity. </p>
+          </div> 
+          </div> 
+        </section>
+
+        <section>
+          <CustomersSay/>
+        </section>
+
+      </div>
+
     );
 }
-
 export default Home;

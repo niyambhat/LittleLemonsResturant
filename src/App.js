@@ -11,6 +11,7 @@ import OrderOnline from './Components/Pages/OrderOnline';
 import Login from './Components/Pages/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Admin from './Components/Pages/Admin';
+import { useEffect } from 'react';
 
 
 function App() {
@@ -20,10 +21,10 @@ function App() {
       Component: Home,
       exact: true,
     },
-    {
-      path:'/about',
-      Component:About
-    },
+    // {
+    //   path:'/about',
+    //   Component:About
+    // },
     {
       path: '/menu',
       Component: Menu,
@@ -49,6 +50,8 @@ function App() {
   return (
     <Router>
     <div className="App">
+    <div className='wrapper'>
+     
       <Header/>
         <main>
         <Routes>
@@ -59,6 +62,8 @@ function App() {
         </main>  
         <Footer/>
     </div>
+    </div>
+      
     </Router>
   );
 }

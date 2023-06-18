@@ -3,6 +3,8 @@ import { Form, Button, Container } from 'react-bootstrap';
 import BookingPage from "../Bookings/BookingPage"
 import { useReducer } from 'react';
 import { fetchAPI } from '../../Api';
+import CustomersSay from '../Layout/CustomersSay';
+import owner from "../../Assets/owner.png"
 
 function reducer(state, action) {
   switch (action.type) {
@@ -41,11 +43,30 @@ function Reservations() {
   }
 
   return (
-    <section><h1>Booking</h1>
+    <>
+     <section className='bookBg'>
       <Container>
         <BookingPage date={date} handleDateChange={handleDateChange} availableBookingTimes={state.times} />
       </Container>
     </section>
+    <section className="aboutSection">
+         <div className='sm-conatiner'>
+         <div className="sideImage">
+         <img src={owner} alt="restaurant" width="400" />
+       </div>
+         <div className="aboutText">
+         <h1>About</h1>
+         <p>Little Lemon Restaurant is a charming culinary haven that captivates diners with its delightful ambiance and exquisite flavors. Nestled in the heart of a bustling city, this hidden gem offers a unique fusion of traditional and modern cuisine, crafted with utmost precision and creativity. </p>
+       </div> 
+       </div> 
+     </section>
+
+     <section>
+       <CustomersSay/>
+     </section>
+    </>
+   
+    
   );
 }
 

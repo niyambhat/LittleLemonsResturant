@@ -3,6 +3,7 @@ import BookingForm from './BookingForm';
 import { submitAPI } from '../../Api';
 import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
+import BookingConfirmation from './BookingConfirmation';
 function BookingPage({ date, handleDateChange, availableBookingTimes }) {
     const [time, setTime] = useState('');
     const [guests, setGuests] = useState();
@@ -44,16 +45,18 @@ function BookingPage({ date, handleDateChange, availableBookingTimes }) {
         }
     }
 
+
+
+
     const validateField = (e) => {
-        debugger;
         let value = parseInt(e.target.value);
-        let isInvalid = value < 10;
+        let isInvalid = value < 2;
         setGuestsIsInValid(isInvalid);
         setErrorMsgs(prev => ({ ...prev, guests: isInvalid ? "Select 2 or more guests" : "" }));
     };
 
     return (
-        <div>
+        <div >
             <BookingForm
                 date={date}
                 time={time}
@@ -65,27 +68,13 @@ function BookingPage({ date, handleDateChange, availableBookingTimes }) {
                 errorMsgs={errorMsgs}
                 guestsIsInValid={guestsIsInValid}
                 validateField={validateField}
+                setShowModal={setShowModal}
+                showModal={showModal}
             />
             <div
                 className="modal show"
                 style={{ display: 'block', position: 'initial' }}
             >
-                {showModal &&
-                    <Modal.Dialog>
-                        <Modal.Header closeButton>
-                            <Modal.Title>Modal title</Modal.Title>
-                        </Modal.Header>
-
-                        <Modal.Body>
-                            <p>Modal body text goes here.</p>
-                        </Modal.Body>
-
-                        <Modal.Footer>
-                            <Button variant="secondary" onClick={() => setShowModal(false)}>Close</Button>
-                        </Modal.Footer>
-                    </Modal.Dialog>
-                }
-
             </div>
         </div>
     );

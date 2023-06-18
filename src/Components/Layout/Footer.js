@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
     return (
       <footer>
-        Footer
+       © Niyam 2023
       </footer>
     );
   }
