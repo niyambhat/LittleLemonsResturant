@@ -9,7 +9,9 @@
 }
 
 
-
+body{
+  font-size: 16px !important;
+}
 /* global */
 h1{
   font-family: 'Markazi Text', serif;
@@ -85,6 +87,17 @@ margin-bottom:80px;
   overflow: hidden;
 }
 
+.bg-custom {
+  background: #495E57 !important;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1{
+    color:white!important
+  }
+}
+
 
 
 .wrapper{
@@ -105,6 +118,10 @@ footer{
   grid-area: footer;
 }
 
+.greybg{
+  background:#494949 !important;
+}
+
 
 .sm-conatiner{
 display: grid;
@@ -114,7 +131,10 @@ margin: auto;
 max-width: 1200px;
 padding: 20px 20px !important;
 align-items: center; /* Vertically align items in the center */
+}
 
+.white-color {
+  color: #ffffff !important; /* Set the desired white color */
 }
 
 .heroImage{
@@ -133,11 +153,14 @@ align-items: center; /* Vertically align items in the center */
 }
 
 .bookForm{
-  border: 1px solid black;
   background-color: #FCCE3F;
   margin-top: 45px;
-  max-width: 750px;
+  max-width: 1096px;
   margin: auto;
+}
+
+.header{
+  z-index: 9999;
 }
 
 .specialsSection{
@@ -192,7 +215,13 @@ align-items: center; /* Vertically align items in the center */
     }
 }
 
+.navbar-menu{
+  align-items: center;
+}
 
+#loginBtn{
+  background:  #FCCE3F;
+}
 
 @media (max-width: 963px) {
   .specials {

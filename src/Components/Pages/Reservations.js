@@ -5,6 +5,7 @@ import { useReducer } from 'react';
 import { fetchAPI } from '../../Api';
 import CustomersSay from '../Layout/CustomersSay';
 import owner from "../../Assets/owner.png"
+import { Segment, Header } from 'semantic-ui-react';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -44,6 +45,11 @@ function Reservations() {
 
   return (
     <>
+        <Segment className="m-1 bg-custom paddings-3">
+    <Header>
+      <h1 className="ui icon center aligned header">Reservations</h1>
+    </Header>
+    </Segment>
      <section className='bookBg'>
       <Container>
         <BookingPage date={date} handleDateChange={handleDateChange} availableBookingTimes={state.times} />

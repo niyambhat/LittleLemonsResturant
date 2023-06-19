@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Header, List } from 'semantic-ui-react';
+import { Container, Header, List, Image } from 'semantic-ui-react';
 
 const Menus = () => {
   const menuItems = [
@@ -8,54 +8,105 @@ const Menus = () => {
       description: 'Description of item 1',
       price: '$10',
       paragraphDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      image: 'placeholder-image-1.jpg', // Replace with actual image URL or import the image
     },
     {
       name: 'Item 2',
       description: 'Description of item 2',
       price: '$12',
       paragraphDescription: 'Praesent vel justo lacinia, posuere eros a, ultrices lectus.',
+      image: 'placeholder-image-2.jpg', // Replace with actual image URL or import the image
     },
     {
-      name: 'Item 3',
-      description: 'Description of item 3',
-      price: '$8',
-      paragraphDescription: 'Etiam feugiat felis sit amet nunc vehicula fringilla.',
+      name: 'Item 1',
+      description: 'Description of item 1',
+      price: '$10',
+      paragraphDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      image: 'placeholder-image-1.jpg', // Replace with actual image URL or import the image
     },
     {
-      name: 'Item 4',
-      description: 'Description of item 4',
-      price: '$15',
-      paragraphDescription: 'Nullam accumsan arcu in sem elementum, sed egestas lacus malesuada.',
+      name: 'Item 2',
+      description: 'Description of item 2',
+      price: '$12',
+      paragraphDescription: 'Praesent vel justo lacinia, posuere eros a, ultrices lectus.',
+      image: 'placeholder-image-2.jpg', // Replace with actual image URL or import the image
     },
     {
-      name: 'Item 5',
-      description: 'Description of item 5',
-      price: '$9',
-      paragraphDescription: 'Vivamus vel sem vulputate, vulputate dui eget, tempus tortor.',
+      name: 'Item 1',
+      description: 'Description of item 1',
+      price: '$10',
+      paragraphDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      image: 'placeholder-image-1.jpg', // Replace with actual image URL or import the image
     },
+    {
+      name: 'Item 2',
+      description: 'Description of item 2',
+      price: '$12',
+      paragraphDescription: 'Praesent vel justo lacinia, posuere eros a, ultrices lectus.',
+      image: 'placeholder-image-2.jpg', // Replace with actual image URL or import the image
+    },
+    {
+      name: 'Item 1',
+      description: 'Description of item 1',
+      price: '$10',
+      paragraphDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      image: 'placeholder-image-1.jpg', // Replace with actual image URL or import the image
+    },
+    {
+      name: 'Item 2',
+      description: 'Description of item 2',
+      price: '$12',
+      paragraphDescription: 'Praesent vel justo lacinia, posuere eros a, ultrices lectus.',
+      image: 'placeholder-image-2.jpg', // Replace with actual image URL or import the image
+    },
+    {
+      name: 'Item 1',
+      description: 'Description of item 1',
+      price: '$10',
+      paragraphDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      image: 'placeholder-image-1.jpg', // Replace with actual image URL or import the image
+    },
+    {
+      name: 'Item 2',
+      description: 'Description of item 2',
+      price: '$12',
+      paragraphDescription: 'Praesent vel justo lacinia, posuere eros a, ultrices lectus.',
+      image: 'placeholder-image-2.jpg', // Replace with actual image URL or import the image
+    }
     // Add more items here...
   ];
+
   const menuStyle = {
-    backgroundColor: 'white',
-    marginTop:'50px'
+    backgroundColor: '#494949 !important',
+    marginTop: '50px',
+    padding: '20px',
   };
 
+  const menuItemStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: '20px',
+  };
+
+  const menuItemContentStyle = {
+    marginLeft: '20px',
+  };
 
   return (
-    <Container style={menuStyle}>
-      <Header as="h2">Little Lemons Restaurant Menu</Header>
-      <List divided relaxed>
-        {menuItems.map((item, index) => (
-          <List.Item key={index}>
-            <List.Content>
-              <List.Header>{item.name}</List.Header>
-              <List.Description>{item.description}</List.Description>
-              <List.Description>{item.price}</List.Description>
-              <p>{item.paragraphDescription}</p>
-            </List.Content>
-          </List.Item>
-        ))}
-      </List>
+    <Container style={menuStyle} className="greybg">
+      {menuItems.map((item, index) => (
+        <div key={index} style={menuItemStyle}>
+          <Image src="https://react.semantic-ui.com/images/wireframe/image.png" rounded size="small" /> {/* Placeholder image */}
+          <div style={menuItemContentStyle}>
+            <List>
+              <List.Header><h2 className='ui header white-color'>{item.name}</h2></List.Header>
+              <List.Description className='ui white-color'>{item.description}</List.Description>
+              <List.Description className='ui white-color'>{item.price}</List.Description>
+              <p className='ui white-color'>{item.paragraphDescription}</p>
+            </List>
+          </div>
+        </div>
+      ))}
     </Container>
   );
 };

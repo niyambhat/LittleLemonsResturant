@@ -39,7 +39,10 @@ function NavBar() {
             </Nav.Item>
             <Nav.Item>
               <NavLink to="/login" activeClassName="active-link" className="nav-link">
-              Login
+              <button id="loginBtn" type="button" className="btn btn-primary btn-lg">
+              Login      
+              </button>
+              
               </NavLink>
             </Nav.Item>
           </Nav>
