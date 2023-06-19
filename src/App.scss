@@ -247,6 +247,22 @@ align-items: center; /* Vertically align items in the center */
 .aboutSection .sm-conatiner{
   grid-template-columns: 1fr;
 }
+.bannerSection{
+  height: 492px;
+  .sm-conatiner{
+    grid-template-columns: 1fr !important;
+  }
+  img{
+    width: 100% !important;
+  }
+}
+.heroImage{
+  height: 344px !important;
+    overflow: hidden !important;
+    border-radius: 45px !important;
+    margin-top: 40px !important;
+}
+
 }
 
 @media (max-width: 645px) {

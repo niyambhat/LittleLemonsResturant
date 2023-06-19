@@ -2,7 +2,7 @@ import React from 'react';
 import yum from "../../Assets/yum.png"
 const MenuItem = ({ title, price, description }) => {
   return (
-    <div className="specialsItem card" style={{ width: "18rem" }}>
+    <div className="specialsItem card" style={{ width: "22rem" }}>
       <img className="card-img-top" src={yum} alt="restaurant" />
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
