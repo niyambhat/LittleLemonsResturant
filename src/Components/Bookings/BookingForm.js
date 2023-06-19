@@ -17,12 +17,13 @@ function BookingForm(props) {
       <h2>Booking Form</h2>
         <Form onSubmit={props.handleSubmit}>
           <Form.Group controlId="date" className='pb-4'>
-            <Form.Label>Choose date</Form.Label>
+            <Form.Label>Choose date <i aria-hidden="true" class="calendar icon"></i>
+</Form.Label>
             <Form.Control aria-label="Date selector" data-testid="dateSelect" type="date" name="date" min={today} value={props.date} onChange={props.handleInputChange} />
             <Form.Control.Feedback aria-label="Date error" type="invalid">{errorMsgs.date}</Form.Control.Feedback>
           </Form.Group>
           <Form.Group controlId="time" className='pb-4'>
-            <Form.Label>Choose time</Form.Label>
+            <Form.Label>Choose time <i aria-hidden="true" class="clock icon"></i></Form.Label>
             <Form.Control aria-label="Time selector" as="select" name="time" value={props.time} onChange={props.handleInputChange}>
             <option value="">Please select an option</option>
             {Array.isArray(props.availableBookingTimes) ? props.availableBookingTimes.map((item, index) => {
@@ -31,12 +32,12 @@ function BookingForm(props) {
             </Form.Control>
           </Form.Group>
           <Form.Group controlId="guests" className='pb-4'>
-            <Form.Label>Number of guests</Form.Label>
+            <Form.Label>Number of guests <i aria-hidden="true" class="users icon"></i></Form.Label>
             <Form.Control aria-label="Number of guests selector" type="number" name="guests" isInvalid={props.guestsIsInValid} value={props.guests} onChange={props.handleInputChange} min={1} max={10} onBlur={validateField} />
             <Form.Control.Feedback type="invalid">{errorMsgs.guests}</Form.Control.Feedback>
           </Form.Group>
           <Form.Group controlId="occasion" className='pb-4'>
-            <Form.Label>Occasion</Form.Label>
+            <Form.Label>Occasion </Form.Label>
             <Form.Control aria-label="Occasion selector" as="select" name="occasion" value={props.occasion} onChange={props.handleInputChange}>
               <option>Birthday</option>
               <option>Anniversary</option>
